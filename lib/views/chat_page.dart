@@ -38,6 +38,7 @@ class ChatPage extends StatelessWidget {
                     );
 
                     if (result != null) {
+                      ref.read(loadingProvider.notifier).toggle();
                       final file = File(result.path);
                       final size = file.lengthSync();
 
@@ -57,8 +58,9 @@ class ChatPage extends StatelessWidget {
                           message,
                           room.id,
                         );
+                        ref.read(loadingProvider.notifier).toggle();
                       } catch(err){
-
+                        ref.read(loadingProvider.notifier).toggle();
                       }
                     }
                   },
