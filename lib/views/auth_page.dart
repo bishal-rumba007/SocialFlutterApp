@@ -210,7 +210,7 @@ class _AuthPageState extends State<AuthPage> {
                                       password: passController.text.trim(),
                                     );
 
-                                    if(response == 'success'){
+                                    if(response == 'Login Successful'){
                                       navigate.pushReplacement(MaterialPageRoute(builder: (context) => const HomePage(),));
                                       scaffoldMessage.showSnackBar(
                                           SnackBar(duration: const Duration(milliseconds: 1500) , content: Text(response)),
@@ -243,7 +243,7 @@ class _AuthPageState extends State<AuthPage> {
                                         image: image,
                                       );
 
-                                      if(response != 'success'){
+                                      if(response != 'Registration Successful'){
                                         scaffoldMessage.showSnackBar(
                                           SnackBar(duration: const Duration(milliseconds: 1500) , content: Text(response)),
                                         );

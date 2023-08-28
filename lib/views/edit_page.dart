@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/views/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import '../models/post.dart';
@@ -83,7 +84,7 @@ class EditPage extends StatelessWidget {
                                       detail: detailController.text.trim(),
                                       postId: post.id
                                   );
-                                    if(response != 'success'){
+                                    if(response != 'Success'){
                                       ScaffoldMessenger.of(context).showSnackBar(
                                           SnackBar(
                                               duration: const Duration(milliseconds: 1500),
@@ -91,7 +92,7 @@ class EditPage extends StatelessWidget {
                                           )
                                       );
                                     } else{
-                                      Get.back();
+                                      Get.off(() => const HomePage(), transition:  Transition.leftToRight);
                                     }
 
                                 } else{

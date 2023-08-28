@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/provider/auth_provider.dart';
 import 'package:flutter_app/provider/crud_provider.dart';
 import 'package:flutter_app/provider/room_provider.dart';
+import 'package:flutter_app/views/chat_page.dart';
 import 'package:flutter_app/views/post_detail_page.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,7 +43,7 @@ class UserDetails extends ConsumerWidget {
                             final scaffoldMessage = ScaffoldMessenger.of(context);
                             final response = await ref.read(roomProvider).createRoom(user);
                             if(response != null){
-
+                              Get.to(() => ChatPage(room: response), transition:  Transition.leftToRight);
 
                             }else{
                               scaffoldMessage.showSnackBar(

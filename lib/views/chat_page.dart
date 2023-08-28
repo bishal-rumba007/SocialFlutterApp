@@ -30,13 +30,13 @@ class ChatPage extends StatelessWidget {
                   onSendPressed: (value) {
                     FirebaseChatCore.instance.sendMessage(value, room.id);
                   },
+                  isAttachmentUploading: isLoad,
                   onAttachmentPressed: () async{
                     final result = await ImagePicker().pickImage(
                       imageQuality: 70,
                       maxWidth: 1440,
                       source: ImageSource.gallery,
                     );
-
                     if (result != null) {
                       ref.read(loadingProvider.notifier).toggle();
                       final file = File(result.path);

@@ -97,7 +97,7 @@ class CreatePage extends StatelessWidget {
                                       userId: FirebaseAuth.instance.currentUser!.uid,
                                       image: image
                                   );
-                                  if(response != 'success'){
+                                  if(response != 'Created'){
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
                                             duration: const Duration(milliseconds: 1500),
